@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Список абітурієнтів</title>
+</head>
+<body style="text-align: center">
+    <h1>Список абітурієнтів</h1>
+    <ul style="list-style-position: inside">
+        {% for applicant in applicants %}
+            <li><a href="{% url 'applicant-detail' pk=applicant.pk %}">{{ applicant.first_name }} {{ applicant.last_name }}</a></li>
+        {% endfor %}
+    </ul>
+
+    <h2>Додати нового абітруієнта</h2>
+    <form method="post" action = "{% url 'applicant-list' %}">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type = "submit"> Додати </button>
+    </form>
+</body>
+</html>

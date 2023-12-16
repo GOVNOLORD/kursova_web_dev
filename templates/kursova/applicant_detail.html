@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Деталі абітурієнтів</title>
+</head>
+<body style="text-align: center">
+    <h1>Деталі абітурієнта</h1>
+    <p><strong>Ім'я: </strong>{{ applicant.first_name }}</p>
+    <p><strong>Прізвище: </strong>{{ applicant.last_name }}</p>
+    <p><strong>Email: </strong>{{ applicant.email }}</p>
+    <p><strong>Телефон: </strong>{{ applicant.phone_number }}</p>
+    <p><strong>Дата народження: </strong>{{ applicant.date_of_birth }}</p>
+    <a href = "{% url 'applicant-list' %}">Назад до списку абітурієнтів</a>
+</body>
+</html>
